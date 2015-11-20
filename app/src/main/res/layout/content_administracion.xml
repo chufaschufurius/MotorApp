@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_administracion"
-    tools:context="com.example.chufaschin.mockupstallerizate.Administracion">
+    tools:context="com.example.chufaschin.mockupstallerizate.Administracion"
+    android:background="@color/ultrablue">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -21,8 +22,7 @@
             android:id="@+id/button4"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.25"
-            android:background="@color/primary_dark"
-            android:textColor="@color/accent"
+            android:background="@drawable/buttonrounded"
             android:onClick="lanzarNuevoCliente" />
 
         <Button
@@ -32,8 +32,7 @@
             android:id="@+id/button5"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.25"
-            android:textColor="@color/primary_dark"
-            android:background="@color/accent"
+            android:background="@drawable/buttonrounded2"
             android:onClick="lanzarNuevoVehiculo" />
 
         <Button
@@ -42,17 +41,15 @@
             android:text="ADMINISTRAR TAREAS"
             android:id="@+id/button"
             android:layout_weight="0.25"
-            android:background="@color/primary_dark"
-            android:textColor="@color/accent" />
+            android:background="@drawable/buttonrounded" />
 
         <Button
-            android:layout_width="384dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CALENDARIO"
             android:id="@+id/button3"
             android:layout_weight="0.25"
-            android:textColor="@color/primary_dark"
-            android:background="@color/accent" />
+            android:background="@drawable/buttonrounded2" />
 
     </LinearLayout>
 </RelativeLayout>

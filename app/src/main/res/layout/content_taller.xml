@@ -12,7 +12,8 @@
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:weightSum="1"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentTop="true"
+        android:background="@color/ultrablue">
 
         <Button
             android:layout_width="match_parent"
@@ -21,8 +22,7 @@
             android:id="@+id/button4"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.50"
-            android:background="#C3BB38"
-            android:textColor="#FEFB64" />
+            android:background="@drawable/buttonrounded" />
 
         <Button
             android:layout_width="match_parent"
@@ -31,7 +31,6 @@
             android:id="@+id/button5"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.50"
-            android:textColor="#C3BB38"
-            android:background="#FEFB64" />
+            android:background="@drawable/buttonrounded2" />
     </LinearLayout>
 </RelativeLayout>

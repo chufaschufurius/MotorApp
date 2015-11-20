@@ -9,8 +9,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:background="@color/primary_dark">
+        android:background="@color/primary_dark"
+        android:weightSum="1">
 
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/arrowBack"
+            android:layout_weight="0.03"
+            android:src="@drawable/arrowback"
+            android:background="@color/primary_dark"
+            android:onClick="lanzarAdministracion" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DATOS NUEVO VEHICULO:"
+            android:id="@+id/textView4"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"
+            android:layout_weight="0.03"
+            android:textSize="20dp" />
     </LinearLayout>
 
     <TextView
@@ -78,14 +101,15 @@
 
             <ImageView
                 android:layout_marginTop="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView"
                 android:src="@drawable/accountsearch"
                 android:layout_marginBottom="10dp"
                 android:layout_above="@+id/resultadosBusqueda"
                 android:layout_toRightOf="@+id/resultadosBusqueda"
-                android:layout_toEndOf="@+id/resultadosBusqueda" />
+                android:layout_toEndOf="@+id/resultadosBusqueda"
+                android:layout_marginLeft="45dp" />
 
         </LinearLayout>
 
@@ -121,14 +145,15 @@
                 android:textColor="#ffffff" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView2"
                 android:src="@drawable/accountsearch"
                 android:layout_marginBottom="10dp"
                 android:layout_above="@+id/resultadosBusqueda"
                 android:layout_toRightOf="@+id/resultadosBusqueda"
-                android:layout_toEndOf="@+id/resultadosBusqueda" />
+                android:layout_toEndOf="@+id/resultadosBusqueda"
+                android:layout_marginLeft="70dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -163,14 +188,15 @@
                 android:textColor="#ffffff" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView3"
                 android:src="@drawable/accountsearch"
                 android:layout_marginBottom="10dp"
                 android:layout_above="@+id/resultadosBusqueda"
                 android:layout_toRightOf="@+id/resultadosBusqueda"
-                android:layout_toEndOf="@+id/resultadosBusqueda" />
+                android:layout_toEndOf="@+id/resultadosBusqueda"
+                android:layout_marginLeft="35dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -206,14 +232,15 @@
                 android:textColor="#ffffff" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView4"
                 android:src="@drawable/accountsearch"
                 android:layout_marginBottom="10dp"
                 android:layout_above="@+id/resultadosBusqueda"
                 android:layout_toRightOf="@+id/resultadosBusqueda"
-                android:layout_toEndOf="@+id/resultadosBusqueda" />
+                android:layout_toEndOf="@+id/resultadosBusqueda"
+                android:layout_marginLeft="55dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -248,14 +275,16 @@
                 android:textColor="#ffffff" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView5"
                 android:src="@drawable/accountsearch"
                 android:layout_marginBottom="10dp"
                 android:layout_above="@+id/resultadosBusqueda"
                 android:layout_toRightOf="@+id/resultadosBusqueda"
-                android:layout_toEndOf="@+id/resultadosBusqueda" />
+                android:layout_toEndOf="@+id/resultadosBusqueda"
+                android:layout_gravity="right"
+                android:layout_marginLeft="15dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -290,14 +319,15 @@
                 android:textColor="#ffffff" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView6"
                 android:src="@drawable/accountsearch"
                 android:layout_marginBottom="10dp"
                 android:layout_above="@+id/resultadosBusqueda"
                 android:layout_toRightOf="@+id/resultadosBusqueda"
-                android:layout_toEndOf="@+id/resultadosBusqueda" />
+                android:layout_toEndOf="@+id/resultadosBusqueda"
+                android:layout_marginLeft="55dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -331,7 +361,8 @@
                 android:layout_alignLeft="@+id/resultadosBusqueda"
                 android:layout_alignStart="@+id/resultadosBusqueda"
                 android:layout_alignRight="@+id/resultadosBusqueda"
-                android:layout_alignEnd="@+id/resultadosBusqueda" />
+                android:layout_alignEnd="@+id/resultadosBusqueda"
+                android:layout_marginRight="5dp" />
 
         </LinearLayout>
 
