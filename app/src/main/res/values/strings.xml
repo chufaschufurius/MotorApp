@@ -15,4 +15,5 @@
     <string name="title_activity_taller">Taller</string>
     <string name="title_activity_nuevo_cliente">NuevoCliente</string>
     <string name="title_activity_nuevo_vehiculo">NuevoVehiculo</string>
+    <string name="title_activity_tarea_mecanico">TareaMecanico</string>
 </resources>
