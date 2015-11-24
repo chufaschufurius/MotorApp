@@ -16,4 +16,7 @@
     <string name="title_activity_nuevo_cliente">NuevoCliente</string>
     <string name="title_activity_nuevo_vehiculo">NuevoVehiculo</string>
     <string name="title_activity_tarea_mecanico">TareaMecanico</string>
+    <string name="title_activity_administracion_seleccionar_marca">AdministracionSeleccionarMarca
+    </string>
+    <string name="title_activity_prueba">Prueba</string>
 </resources>
