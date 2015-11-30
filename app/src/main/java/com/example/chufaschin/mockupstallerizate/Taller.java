@@ -13,9 +13,9 @@ public class Taller extends AppCompatActivity {
         setContentView(R.layout.activity_taller);
     }
 
-    public void lanzarCalendario(View view){
-        Intent intent= new Intent(this, CalendarioMecanico.class);
-        startActivity(intent);
-    }
+//    public void lanzarCalendario(View view){
+//        Intent intent= new Intent(this, CalendarioMecanico.class);
+//        startActivity(intent);
+//    }
 
 }

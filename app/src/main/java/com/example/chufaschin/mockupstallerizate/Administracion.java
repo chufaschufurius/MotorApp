@@ -32,5 +32,10 @@ public class Administracion extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void lanzarScroll(View view){
+        Intent intent= new Intent(this, ListaTareasTaller.class);
+        startActivity(intent);
+    }
+
 
 }

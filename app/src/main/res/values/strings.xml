@@ -19,4 +19,6 @@
     <string name="title_activity_administracion_seleccionar_marca">AdministracionSeleccionarMarca
     </string>
     <string name="title_activity_prueba">Prueba</string>
+    <string name="title_activity_lista_tareas_taller">ListaTareasTaller</string>
+    <string name="title_activity_tarea_taller">TareaTaller</string>
 </resources>

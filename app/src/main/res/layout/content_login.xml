@@ -20,7 +20,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ADMINISTRACION"
+            android:text="NUEVO"
             android:id="@+id/button4"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.50"
@@ -30,7 +30,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TALLER"
+            android:text="TAREAS"
             android:id="@+id/button5"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.50"

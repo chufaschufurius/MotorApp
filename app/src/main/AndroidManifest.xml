@@ -54,7 +54,7 @@
             android:label="@string/title_activity_administracion_seleccionar_marca" >
         </activity>
         <activity
-            android:name=".GifView.Prueba"
+            android:name=".Prueba"
             android:label="@string/title_activity_prueba" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -63,13 +63,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Prueba"
-            android:label="@string/title_activity_prueba" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:name=".ListaTareasTaller"
+            android:label="@string/title_activity_lista_tareas_taller" >
+        </activity>
+        <activity
+            android:name=".TareaTaller"
+            android:label="@string/title_activity_tarea_taller" >
         </activity>
     </application>
 
