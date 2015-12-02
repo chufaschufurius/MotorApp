@@ -1,7 +1,9 @@
-package com.example.chufaschin.mockupstallerizate;
+package com.example.chufaschin.mockupstallerizate.VersionAdministracion;
 
 import android.os.Bundle;
 import android.app.Activity;
+
+import com.example.chufaschin.mockupstallerizate.R;
 
 public class AdministracionSeleccionarMarca extends Activity {
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_login"
-    tools:context="com.example.chufaschin.mockupstallerizate.Login">
+    tools:context="com.example.chufaschin.mockupstallerizate.VersionAdministracion.MenuAdministracion">
 
     <LinearLayout
         android:orientation="vertical"
@@ -25,7 +25,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.50"
             android:background="@drawable/buttonrounded"
-            android:onClick="lanzarAdministracion" />
+            android:onClick="lanzarNuevo"
+            android:nestedScrollingEnabled="true" />
 
         <Button
             android:layout_width="match_parent"
@@ -35,6 +36,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.50"
             android:background="@drawable/buttonrounded2"
-            android:onClick="lanzarTaller" />
+            android:onClick="lanzarTareas" />
     </LinearLayout>
 </RelativeLayout>

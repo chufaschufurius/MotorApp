@@ -2,11 +2,11 @@ package com.example.chufaschin.mockupstallerizate;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import com.example.chufaschin.mockupstallerizate.VersionAdministracion.MenuAdministracion;
+import com.example.chufaschin.mockupstallerizate.VersionAdministracion.NuevoVehiculo;
 
 public class Administracion extends AppCompatActivity {
 
@@ -24,11 +24,11 @@ public class Administracion extends AppCompatActivity {
         startActivity(intent);
     }
     public void lanzarAsignarTareas(View view){
-        Intent intent= new Intent(this, Login.class);
+        Intent intent= new Intent(this, MenuAdministracion.class);
         startActivity(intent);
     }
     public void lanzarCalendario(View view){
-        Intent intent= new Intent(this, Login.class);
+        Intent intent= new Intent(this, MenuAdministracion.class);
         startActivity(intent);
     }
 

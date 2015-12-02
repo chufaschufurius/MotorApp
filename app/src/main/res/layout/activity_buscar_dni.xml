@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ultrablue">
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="0"
+        android:background="@color/ultrablue">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_weight="0.08"
+                    android:src="@drawable/arrowback"
+                    android:background="@color/ultrablue"
+                    android:layout_width="50px"
+                    android:layout_height="match_parent"
+                    android:onClick="lanzarMenu" />
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="100dp"
+                    android:paddingLeft="30dp"
+                    android:text="@string/textViewApp"
+                    android:id="@+id/textView8"
+                    android:textSize="@android:dimen/app_icon_size"
+                    android:textAppearance="@style/Base.Widget.AppCompat.ActionBar"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/ultrablue"
+                    android:autoText="false" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BUSCAR DNI:"
+                        android:id="@+id/textView9"
+                        android:layout_gravity="left|center_horizontal"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp"
+                        android:inputType="" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="100dp">
+
+                    <EditText
+                        android:layout_width="231dp"
+                        android:layout_height="33dp"
+                        android:id="@+id/editText3" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageButton4"
+                        android:background="@drawable/magnify" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:inputType="textMultiLine"
+                android:textSize="40px"
+                android:ems="10"
+                android:id="@+id/editText"
+                android:text="RESULTADOSBUSQUEDA"
+                android:layout_marginLeft="100dp"
+                android:textColor="@color/grey"
+                android:background="#eee2e2" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="421dp"
+                android:background="@color/ultrablue">
+
+                <Button
+                    android:layout_width="154dp"
+                    android:layout_height="51dp"
+                    android:text="SIGUIENTE"
+                    android:id="@+id/button7"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="230dp"
+                    android:background="@drawable/buttonrounded2"
+                    android:onClick="lanzarDniExiste" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </TableLayout>
+</ScrollView>

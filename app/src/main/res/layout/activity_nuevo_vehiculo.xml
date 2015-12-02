@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.chufaschin.mockupstallerizate.NuevoVehiculo">
+    tools:context="com.example.chufaschin.mockupstallerizate.VersionAdministracion.NuevoVehiculo">
 
     <LinearLayout
         android:orientation="vertical"
@@ -21,7 +21,8 @@
             android:layout_weight="0.03"
             android:src="@drawable/arrowback"
             android:background="@color/primary_dark"
-            android:onClick="lanzarAdministracion" />
+            android:onClick="lanzarDniExiste"
+            android:nestedScrollingEnabled="true" />
 
         <TextView
             android:layout_marginTop="20dp"
@@ -55,7 +56,10 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_weight="0.71" />
+        android:layout_weight="0.71"
+        android:layout_toRightOf="@+id/textView12"
+        android:layout_toEndOf="@+id/textView12"
+        android:onClick="lanzarSeleccionarMarca" />
 
     <LinearLayout
         android:layout_marginTop="60dp"
