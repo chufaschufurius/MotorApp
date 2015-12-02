@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 
 import com.example.chufaschin.mockupstallerizate.R;
 import com.koushikdutta.ion.Ion;
+import com.parse.Parse;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -22,6 +23,12 @@ public class SplashScreen extends AppCompatActivity {
         ImageView imageView= (ImageView)findViewById(R.id.imageSplash);
         Ion.with(imageView).load("http://2.bp.blogspot.com/-SBtthYnAjzE/U1eEF9upHSI/AAAAAAAABZ8/bo0pxhnvHOg/s1600/Imagen-animada-Motor-15.gif");
 //        progressBar.setBackgroundColor("#FFEB3B");
+
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+
+        Parse.initialize(this, "rhJjlsANpxGikehq4WLxFR6KI6cQThGnnZy4x1Xo", "0eI1uNLoUIrX6FHVaN0IrSaQcgIjztVzCVYtXBiJ");
+
     }
 
     @Override
