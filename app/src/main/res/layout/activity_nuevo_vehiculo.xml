@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:background="@color/primary_dark"
+        android:background="@color/ultrablue"
         android:weightSum="1">
 
         <ImageButton
@@ -20,7 +20,7 @@
             android:id="@+id/arrowBack"
             android:layout_weight="0.03"
             android:src="@drawable/arrowback"
-            android:background="@color/primary_dark"
+            android:background="@color/ultrablue"
             android:onClick="lanzarDniExiste"
             android:nestedScrollingEnabled="true" />
 
@@ -282,7 +282,7 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:id="@+id/imageView5"
-                android:src="@drawable/accountsearch"
+                android:src="@drawable/magnify"
                 android:layout_marginBottom="10dp"
                 android:layout_above="@+id/resultadosBusqueda"
                 android:layout_toRightOf="@+id/resultadosBusqueda"

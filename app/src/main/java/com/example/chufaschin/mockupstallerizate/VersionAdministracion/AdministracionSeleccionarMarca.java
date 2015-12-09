@@ -10,7 +10,7 @@ public class AdministracionSeleccionarMarca extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_administracion_seleccionar_marca);
+        setContentView(R.layout.seleccionar_marca);
     }
 
 }

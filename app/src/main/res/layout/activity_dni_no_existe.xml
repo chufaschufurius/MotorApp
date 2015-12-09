@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
+    android:layout_height="wrap_content" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="DATOS CLIENTE:"
+            android:text="NUEVO CLIENTE:"
             android:id="@+id/textView35" />
     </LinearLayout>
 
@@ -60,7 +60,8 @@
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:id="@+id/linearLayout3">
 
         <TextView
             android:layout_width="wrap_content"
@@ -101,19 +102,20 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_marginBottom="3dp"
-            android:text="Large Text"
+            android:text="Vehiculo"
             android:id="@+id/textView33" />
 
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="116dp"
         android:layout_width="200dp"
-        android:layout_height="300dp">
+        android:layout_height="300dp"
+        android:id="@+id/linearLayout4">
 
-        <TextView
+        <EditText
             android:selectAllOnFocus="true"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -124,7 +126,7 @@
             android:layout_gravity="center_horizontal"
             android:textSize="10dp" />
 
-        <TextView
+        <EditText
             android:selectAllOnFocus="true"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -135,7 +137,7 @@
             android:layout_gravity="center_horizontal"
             android:textSize="10dp" />
 
-        <TextView
+        <EditText
             android:selectAllOnFocus="true"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -145,7 +147,7 @@
             android:id="@+id/editText5"
             android:textSize="10dp" />
 
-        <TextView
+        <EditText
             android:selectAllOnFocus="true"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -155,7 +157,7 @@
             android:id="@+id/editText6"
             android:textSize="10dp" />
 
-        <TextView
+        <EditText
             android:selectAllOnFocus="true"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -165,16 +167,35 @@
             android:id="@+id/editText7"
             android:textSize="10dp" />
 
-        <TextView
-            android:selectAllOnFocus="true"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:inputType="textPersonName"
-            android:layout_marginBottom="3dp"
-            android:text="Name"
-            android:ems="10"
-            android:id="@+id/editText8"
-            android:textSize="15dp" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="right">
+
+            <EditText
+                android:selectAllOnFocus="true"
+                android:layout_width="171dp"
+                android:layout_height="30dp"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="3dp"
+                android:text="selecciona o anade un vehiculo"
+                android:ems="10"
+                android:id="@+id/editText8"
+                android:textSize="10dp" />
+
+            <Button
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/button10"
+                android:background="@drawable/plus"
+                android:onClick="lanzarNuevoVehiculo"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="0dp"
+                android:layout_toRightOf="@+id/linearLayout4"
+                android:layout_toEndOf="@+id/linearLayout4"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -195,6 +216,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:onClick="lanzarNuevoVehiculo" />
+            android:onClick="lanzarDatosCliente" />
     </RelativeLayout>
+
 </RelativeLayout>

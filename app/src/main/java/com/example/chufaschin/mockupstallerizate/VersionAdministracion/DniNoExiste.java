@@ -7,12 +7,12 @@ import android.view.View;
 
 import com.example.chufaschin.mockupstallerizate.R;
 
-public class DniExiste extends Activity {
+public class DniNoExiste extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dni_existe);
+        setContentView(R.layout.activity_dni_no_existe);
     }
     public void lanzarBuscarDni(View view){
         Intent intent= new Intent(this, BuscarDni.class);
@@ -24,9 +24,8 @@ public class DniExiste extends Activity {
         startActivity(intent);
     }
 
-    public void lanzarDniNoExiste(View view){
-        Intent intent= new Intent(this, DniNoExiste.class);
+    public void lanzarDatosCliente(View view){
+        Intent intent= new Intent(this, DniExiste.class);
         startActivity(intent);
     }
-
 }

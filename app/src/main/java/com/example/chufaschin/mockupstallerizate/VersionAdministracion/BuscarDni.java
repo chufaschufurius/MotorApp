@@ -22,5 +22,8 @@ public class BuscarDni extends Activity {
         Intent intent= new Intent(this, DniExiste.class);
         startActivity(intent);
     }
-
+    public void lanzarDniNoExiste(View view){
+        Intent intent= new Intent(this, DniNoExiste.class);
+        startActivity(intent);
+    }
 }

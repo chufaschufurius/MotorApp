@@ -23,4 +23,5 @@
     <string name="title_activity_tarea_taller">TareaTaller</string>
     <string name="title_activity_buscar_dni">BuscarDni</string>
     <string name="title_activity_dni_existe">DniExiste</string>
+    <string name="title_activity_dni_no_existe">DniNoExiste</string>
 </resources>
