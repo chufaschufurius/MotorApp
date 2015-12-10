@@ -9,12 +9,13 @@ public class ClientsEntry implements Serializable {
 
 //    private int id;
         //        public static final String COLUMN_ID = BaseColumns._ID;
-    public static final String TABLE_NAME = "CLIENTS";
-    public static final String DNI = "dni";
-    public static final String FK_PLATE = "fk_plate";
-    public static final String NAME = "name";
-    public static final int PHONE =0;
-    public static final String SURNAME="surname";
+    public static String TABLE_NAME = "clients";
+    public static String DNI = "dni";
+    public static String FK_PLATE = "plate"; //cogemos la matricula de coches
+    public static String EMAIL = "email";
+    public static String NAME = "name";
+    public static int PHONE =0;
+    public static String SURNAME="surname";
 
     public static String getDNI() {
         return DNI;
@@ -23,6 +24,8 @@ public class ClientsEntry implements Serializable {
     public static String getFkPlate() {
         return FK_PLATE;
     }
+
+    public static String getEMAIL() {        return EMAIL;    }
 
     public static String getNAME() {
         return NAME;
@@ -48,51 +51,21 @@ public class ClientsEntry implements Serializable {
                     '}';
         }
 
-        public String getTableName() {
+    public String getTableName() {
             return TABLE_NAME;
         }
-//
-//
-//        public String getDNI() {
-//            return DNI;
-//        }
-//        public void setDNI(int DNI) {ClientsEntry.DNI=DNI;}
-//
-//        public void setMOTOR_NUMBER(int MOTOR_NUMBER) {
-//        CarsEntry.MOTOR_NUMBER = MOTOR_NUMBER;
-//    }
-//
-//        public String getFK_PLATE() {
-//            return FK_PLATE;
-//        }
-//        public void setFK_PLATE(String FK_PLATE){CarsEntry.PLATE;}
-//
-//        public String getNAME() {
-//            return NAME;
-//        }
-//        public void setNAME(String NAME) {
-//            ClientsEntry.NAME=NAME;
-//        }
-//
-//        public int getPHONE() {
-//            return PHONE;
-//        }
-//
-//        public String getSURNAME() {
-//        return SURNAME;
-//    }
-//
-//        public void setRIGHT(int RIGHT) {
-//            ClientsEntry.RIGHT = RIGHT;
-//        }
-//
-//        public int getWRONG() {
-//            return WRONG;
-//        }
-//
-//        public void setWRONG(int WRONG) {
-//            ClientsEntry.WRONG = WRONG;
-//        }
+
+    public void setDNI(String DNI) {   ClientsEntry.DNI = DNI;}
+    public void setFkPlate(String FK_PLATE) {   ClientsEntry.FK_PLATE = FK_PLATE;}
+
+    public void setEMAIL(String EMAIL) {   ClientsEntry.EMAIL = EMAIL;    }
+
+    public void setNAME(String NAME) {   ClientsEntry.NAME = NAME;    }
+    public void setPHONE(int PHONE) {   ClientsEntry.PHONE = PHONE;    }
+
+    public void setSURNAME(String SURNAME) {   ClientsEntry.SURNAME = SURNAME;    }
+
+
     }
 
 

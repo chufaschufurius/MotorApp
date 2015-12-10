@@ -1,9 +1,13 @@
-package com.example.chufaschin.mockupstallerizate.Data;
+package com.example.chufaschin.mockupstallerizate.SQLite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import com.example.chufaschin.mockupstallerizate.Data.CarsEntry;
+import com.example.chufaschin.mockupstallerizate.Data.ClientsEntry;
+import com.example.chufaschin.mockupstallerizate.Data.Contact;
 
 /**
  * Created by CHUFASCHIN on 29/01/2015.
@@ -34,7 +38,7 @@ public class Ayudante extends SQLiteOpenHelper {
                     ClientsEntry.NAME +"VARCHAR"+
                     ClientsEntry.PHONE +"INTEGER"+
                     ClientsEntry.SURNAME +"VARCHAR"+
-                    "FOREIGN KEY("+ ClientsEntry.FK_PLATE+") REFERENCES "+Contact.CarsEntry.TABLE_NAME+"("+Contact.CarsEntry.PLATE+")";
+                    "FOREIGN KEY("+ ClientsEntry.FK_PLATE+") REFERENCES "+ Contact.CarsEntry.TABLE_NAME+"("+Contact.CarsEntry.PLATE+")";
 
     @Override
     public void onCreate(SQLiteDatabase db) {

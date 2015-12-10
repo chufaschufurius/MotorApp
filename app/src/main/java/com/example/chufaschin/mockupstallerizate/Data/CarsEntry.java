@@ -1,15 +1,13 @@
 package com.example.chufaschin.mockupstallerizate.Data;
 
-import android.graphics.Bitmap;
-
 import java.io.Serializable;
 
 /**
  * Created by CHUFASCHIN on 04/03/2015.
  */
 public class CarsEntry implements Serializable {
-    public static String TABLE_NAME = "CARS";
-    public static int MOTOR_NUMBER = 0;
+    public static String TABLE_NAME = "cars";
+    public static String MOTOR_NUMBER ="motorNumber";
     public static String BRAND="brand";
     public static String MODEL = "model";
     public static String OWNER = "owner";
@@ -29,41 +27,39 @@ public class CarsEntry implements Serializable {
                 '}';
     }
 
-    public int getMOTOR_NUMBER() {
+    public static String getMOTOR_NUMBER() {
         return MOTOR_NUMBER;
     }
-    public void setMOTOR_NUMBER(int MOTOR_NUMBER) {
+    public void setMOTOR_NUMBER(String MOTOR_NUMBER) {
         CarsEntry.MOTOR_NUMBER = MOTOR_NUMBER;
     }
 
-    public String getBRAND() {
+    public static String getBRAND() {
         return BRAND;
     }
     public void setBRAND(String BRAND) { CarsEntry.BRAND = BRAND;}
 
-    public String getMODEL() {
+    public static String getMODEL() {
         return MODEL;
     }
     public void setMODEL(String MODEL) { CarsEntry.MODEL = MODEL;}
 
-    public String getOWNER() {
+    public static String getOWNER() {
         return OWNER;
     }
     public void setOWNER(String OWNER) { CarsEntry.OWNER = OWNER;}
 
-    public String getPLATE() {
+    public static String getPLATE() {
         return PLATE;
     }
     public void setPLATE(String PLATE) { CarsEntry.PLATE = PLATE;}
 
-    public String getTASK() {
+    public static String getTASK() {
         return TASK;
     }
     public void setTASK(String TASK) { CarsEntry.TASK = TASK;}
 
-
-
-    public String getTABLE_NAME() {
+    public static String getTABLE_NAME() {
         return TABLE_NAME;
     }
     public void setTABLE_NAME(String TABLE_NAME) {

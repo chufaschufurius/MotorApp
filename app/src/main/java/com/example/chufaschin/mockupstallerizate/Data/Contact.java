@@ -20,7 +20,7 @@ public class Contact{
         public static final String OWNER="owner";
         public static final String PLATE= "plate";
         public static final String TASK= "task";
-        public static final String TABLE_NAME = "CURSOS";
+        public static final String TABLE_NAME = "cars";
     }
 
     public static abstract class ClientsEntry implements
@@ -30,6 +30,6 @@ public class Contact{
         public static final String FK_ID_COURSE = "id_course";
         public static final String NAME = "name";
         public static final int ACCURACY=0;
-        public static final String TABLE_NAME = "TEMAS";
+        public static final String TABLE_NAME = "clients";
     }
 }

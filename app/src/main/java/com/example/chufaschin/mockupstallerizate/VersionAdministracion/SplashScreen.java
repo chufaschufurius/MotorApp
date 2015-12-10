@@ -9,9 +9,12 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import com.example.chufaschin.mockupstallerizate.Data.CarsEntry;
+import com.example.chufaschin.mockupstallerizate.Data.DataSource;
 import com.example.chufaschin.mockupstallerizate.R;
 import com.koushikdutta.ion.Ion;
 import com.parse.Parse;
+import com.parse.ParseObject;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -28,7 +31,21 @@ public class SplashScreen extends AppCompatActivity {
         Parse.enableLocalDatastore(this);
 
         Parse.initialize(this, "rhJjlsANpxGikehq4WLxFR6KI6cQThGnnZy4x1Xo", "0eI1uNLoUIrX6FHVaN0IrSaQcgIjztVzCVYtXBiJ");
+//        ParseObject testObject= new ParseObject("TestObject");
+//        testObject.put("foo", "bar");
+//        testObject.saveInBackground();
 
+        DataSource dataSource=new DataSource(this);
+        dataSource.insertCars();
+
+//        CarsEntry carsEntry= new CarsEntry();
+//        carsEntry.setBRAND("toyota");
+//        carsEntry.setMODEL("corola");
+//        carsEntry.setMOTOR_NUMBER(6564);
+//        carsEntry.setOWNER("Jose Perez");
+//        carsEntry.setPLATE("4545gd");
+//        carsEntry.setTASK("CAMBIAR FILTROS");
+//        dataSource.insertCarsEntry(carsEntry);
     }
 
     @Override
