@@ -34,14 +34,11 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                final Intent mainIntent = new Intent(SplashScreen.this, ListaTareasTaller.class);
+                final Intent mainIntent = new Intent(SplashScreen.this, AdministracionSeleccionarMarca.class);
                 SplashScreen.this.startActivity(mainIntent);
                 SplashScreen.this.finish();
-
             }
-
-
-        }, 4000);
+        }, 000);
     }
 
     @Override
