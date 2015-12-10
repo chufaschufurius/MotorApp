@@ -5,12 +5,12 @@ import android.app.Activity;
 
 import com.example.chufaschin.mockupstallerizate.R;
 
-public class AdministracionSeleccionarMarca extends Activity {
+public class SeleccionarMarca extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.seleccionar_marca);
+        setContentView(R.layout.activity_administracion_seleccionar_marca);
     }
 
 }
