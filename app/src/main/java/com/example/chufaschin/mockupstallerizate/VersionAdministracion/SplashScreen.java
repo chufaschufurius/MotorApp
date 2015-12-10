@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-import com.example.chufaschin.mockupstallerizate.ListaTareasTaller;
 import com.example.chufaschin.mockupstallerizate.R;
 import com.koushikdutta.ion.Ion;
 import com.parse.Parse;
@@ -34,7 +32,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                final Intent mainIntent = new Intent(SplashScreen.this, AdministracionSeleccionarMarca.class);
+                final Intent mainIntent = new Intent(SplashScreen.this, SeleccionarMarca.class);
                 SplashScreen.this.startActivity(mainIntent);
                 SplashScreen.this.finish();
             }

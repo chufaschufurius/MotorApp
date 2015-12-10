@@ -20,7 +20,7 @@ public class NuevoVehiculo extends Activity {
     }
 
     public void lanzarSeleccionarMarca(View view){
-        Intent intent= new Intent(this, AdministracionSeleccionarMarca.class);
+        Intent intent= new Intent(this, SeleccionarMarca.class);
         startActivity(intent);
     }
 }

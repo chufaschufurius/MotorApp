@@ -45,7 +45,7 @@
             android:label="@string/title_activity_nuevo_vehiculo" >
         </activity>
         <activity
-            android:name=".VersionAdministracion.AdministracionSeleccionarMarca"
+            android:name=".VersionAdministracion.SeleccionarMarca"
             android:label="@string/title_activity_administracion_seleccionar_marca" >
         </activity>
         <activity
