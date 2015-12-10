@@ -4,14 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import com.example.chufaschin.mockupstallerizate.Data.CarsEntry;
+import com.example.chufaschin.mockupstallerizate.Data.DataSource;
+import com.example.chufaschin.mockupstallerizate.ListaTareasTaller;
 import com.example.chufaschin.mockupstallerizate.R;
 import com.koushikdutta.ion.Ion;
 import com.parse.Parse;
+import com.parse.ParseObject;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -28,7 +33,18 @@ public class SplashScreen extends AppCompatActivity {
         Parse.enableLocalDatastore(this);
 
         Parse.initialize(this, "rhJjlsANpxGikehq4WLxFR6KI6cQThGnnZy4x1Xo", "0eI1uNLoUIrX6FHVaN0IrSaQcgIjztVzCVYtXBiJ");
-        //Abre la siguiente activity despues del tiempo indicado y evita que se vuelva a abrir al usar le botón atrás +
+
+        DataSource dataSource=new DataSource(this);
+        dataSource.insertCars();
+
+//        CarsEntry carsEntry= new CarsEntry();
+//        carsEntry.setBRAND("toyota");
+//        carsEntry.setMODEL("corola");
+//        carsEntry.setMOTOR_NUMBER(6564);
+//        carsEntry.setOWNER("Jose Perez");
+//        carsEntry.setPLATE("4545gd");
+//        carsEntry.setTASK("CAMBIAR FILTROS");
+//        dataSource.insertCarsEntry(carsEntry);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
