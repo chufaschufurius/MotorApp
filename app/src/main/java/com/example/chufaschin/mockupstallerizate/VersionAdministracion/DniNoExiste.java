@@ -15,7 +15,7 @@ public class DniNoExiste extends Activity {
         setContentView(R.layout.activity_dni_no_existe);
     }
     public void lanzarBuscarDni(View view){
-        Intent intent= new Intent(this, BuscarDni.class);
+        Intent intent= new Intent(this, BuscarMatricula.class);
         startActivity(intent);
     }
 
@@ -25,7 +25,7 @@ public class DniNoExiste extends Activity {
     }
 
     public void lanzarDatosCliente(View view){
-        Intent intent= new Intent(this, DniExiste.class);
+        Intent intent= new Intent(this, MatriculaExiste.class);
         startActivity(intent);
     }
 }

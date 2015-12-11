@@ -66,11 +66,11 @@
             android:label="@string/title_activity_tarea_taller" >
         </activity>
         <activity
-            android:name=".VersionAdministracion.BuscarDni"
+            android:name=".VersionAdministracion.BuscarMatricula"
             android:label="@string/title_activity_buscar_dni" >
         </activity>
         <activity
-            android:name=".VersionAdministracion.DniExiste"
+            android:name=".VersionAdministracion.MatriculaExiste"
             android:label="@string/title_activity_dni_existe" >
         </activity>
         <activity

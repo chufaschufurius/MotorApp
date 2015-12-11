@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingLeft="10dp"
-                android:onClick="lanzarBuscarDni"
+                android:onClick="buscarDni"
                 android:layout_column="3" />
 
             <TextView

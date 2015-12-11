@@ -7,7 +7,6 @@ import android.view.View;
 
 import com.example.chufaschin.mockupstallerizate.ListaTareasTaller;
 import com.example.chufaschin.mockupstallerizate.R;
-import com.example.chufaschin.mockupstallerizate.VersionAdministracion.BuscarDni;
 
 public class MenuAdministracion extends AppCompatActivity {
 
@@ -17,7 +16,7 @@ public class MenuAdministracion extends AppCompatActivity {
         setContentView(R.layout.activity_menu_administracion);
     }
     public void lanzarNuevo(View view){
-        Intent intent= new Intent(this, BuscarDni.class);
+        Intent intent= new Intent(this, BuscarMatricula.class);
         startActivity(intent);
     }
 

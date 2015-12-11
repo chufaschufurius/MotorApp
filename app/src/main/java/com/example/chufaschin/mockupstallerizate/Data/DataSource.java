@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.chufaschin.mockupstallerizate.SQLite.Ayudante;
 import com.parse.ParseObject;
 
 /**
@@ -12,24 +11,14 @@ import com.parse.ParseObject;
  */
 public class DataSource {
     private Context mContext;
-    private Ayudante mSQLiteHelper ;
     boolean insertado = false;
     boolean borrado = false;
     boolean actualizado = false;
+
     public DataSource(Context context) {
         mContext = context;
-        mSQLiteHelper = new Ayudante(mContext);
+    }
 
-    }
-    public SQLiteDatabase openReadable() {
-        return mSQLiteHelper.getReadableDatabase();
-    }
-    public SQLiteDatabase openWriteable() {
-        return mSQLiteHelper.getWritableDatabase();
-    }
-    public void close(SQLiteDatabase database) {
-        database.close();
-    }
 
 //    public boolean insertCarsEntry(CarsEntry carsEntry) {
 //        CarsEntry cars=carsEntry;
@@ -71,16 +60,26 @@ public class DataSource {
 //        return insertado=true;
 //    }
 
-    public void insertCars(){
-        ParseObject cars= new ParseObject("cars");
-        cars.put(String.valueOf(CarsEntry.MOTOR_NUMBER), CarsEntry.getMOTOR_NUMBER());
+    public void insertCars() {
+        ParseObject cars = new ParseObject("cars");
+        cars.put(CarsEntry.MOTOR_NUMBER, CarsEntry.getMotorNumber());
         cars.put(CarsEntry.BRAND, CarsEntry.getBRAND());
         cars.put(CarsEntry.MODEL, CarsEntry.getMODEL());
         cars.put(CarsEntry.OWNER, CarsEntry.getOWNER());
         cars.put(CarsEntry.PLATE, CarsEntry.getPLATE());
         cars.put(CarsEntry.TASK, CarsEntry.getTASK());
-
         cars.saveInBackground();
+    }
+
+    public void insertClients(){
+        ParseObject clients = new ParseObject("clients");
+        clients.put(ClientsEntry.DNI, ClientsEntry.getDNI());
+        clients.put(ClientsEntry.FK_PLATE, ClientsEntry.getFkPlate());
+        clients.put(ClientsEntry.EMAIL, ClientsEntry.getEMAIL());
+        clients.put(ClientsEntry.NAME, ClientsEntry.getNAME());
+        clients.put(ClientsEntry.SURNAME, ClientsEntry.getSURNAME());
+        clients.put(ClientsEntry.PHONE, ClientsEntry.getPHONE());
+        clients.saveInBackground();
     }
 
 

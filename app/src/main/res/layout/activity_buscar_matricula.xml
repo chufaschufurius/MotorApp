@@ -56,65 +56,55 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="BUSCAR DNI:"
+                        android:text="@string/buscarMatricula"
                         android:id="@+id/textView9"
                         android:layout_gravity="left|center_horizontal"
                         android:textColor="#ffffff"
                         android:textSize="20dp"
-                        android:inputType="" />
+                         />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginLeft="100dp">
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal">
 
                     <EditText
-                        android:layout_width="231dp"
-                        android:layout_height="33dp"
-                        android:id="@+id/editText3" />
-
-                    <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/imageButton4"
+                        android:id="@+id/findMatricula"
+                        android:layout_weight="1"
+                        android:inputType="text" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/searchBtn"
                         android:background="@drawable/magnify" />
                 </LinearLayout>
+
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:inputType="textMultiLine"
-                android:textSize="40px"
-                android:ems="10"
-                android:id="@+id/editText"
-                android:text="RESULTADOSBUSQUEDA"
-                android:layout_marginLeft="100dp"
-                android:textColor="@color/grey"
-                android:background="#eee2e2" />
-
-            <LinearLayout
+            <RelativeLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="421dp"
+                android:layout_height="477dp"
                 android:background="@color/ultrablue">
 
                 <Button
-                    android:layout_width="154dp"
-                    android:layout_height="51dp"
-                    android:text="SIGUIENTE"
-                    android:id="@+id/button7"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="230dp"
-                    android:background="@drawable/buttonrounded2"
-                    android:onClick="lanzarDniNoExiste"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginRight="20dp" />
-            </LinearLayout>
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/siguiente"
+                    android:id="@+id/Siguientebtn"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="27dp" />
+
+            </RelativeLayout>
         </LinearLayout>
 
     </TableLayout>

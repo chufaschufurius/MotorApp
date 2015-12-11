@@ -4,19 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-import com.example.chufaschin.mockupstallerizate.Data.CarsEntry;
-import com.example.chufaschin.mockupstallerizate.Data.DataSource;
-import com.example.chufaschin.mockupstallerizate.ListaTareasTaller;
 import com.example.chufaschin.mockupstallerizate.R;
 import com.koushikdutta.ion.Ion;
 import com.parse.Parse;
-import com.parse.ParseObject;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -34,21 +29,13 @@ public class SplashScreen extends AppCompatActivity {
 
         Parse.initialize(this, "rhJjlsANpxGikehq4WLxFR6KI6cQThGnnZy4x1Xo", "0eI1uNLoUIrX6FHVaN0IrSaQcgIjztVzCVYtXBiJ");
 
-        DataSource dataSource=new DataSource(this);
-        dataSource.insertCars();
+//        DataSource dataSource = new DataSource(this);
+//        dataSource.insertCars();
 
-//        CarsEntry carsEntry= new CarsEntry();
-//        carsEntry.setBRAND("toyota");
-//        carsEntry.setMODEL("corola");
-//        carsEntry.setMOTOR_NUMBER(6564);
-//        carsEntry.setOWNER("Jose Perez");
-//        carsEntry.setPLATE("4545gd");
-//        carsEntry.setTASK("CAMBIAR FILTROS");
-//        dataSource.insertCarsEntry(carsEntry);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                final Intent mainIntent = new Intent(SplashScreen.this, SeleccionarMarca.class);
+                final Intent mainIntent = new Intent(SplashScreen.this, BuscarMatricula.class);
                 SplashScreen.this.startActivity(mainIntent);
                 SplashScreen.this.finish();
             }

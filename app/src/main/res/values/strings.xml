@@ -24,4 +24,9 @@
     <string name="title_activity_buscar_dni">BuscarDni</string>
     <string name="title_activity_dni_existe">DniExiste</string>
     <string name="title_activity_dni_no_existe">DniNoExiste</string>
+    <string name="siguiente">SIGUIENTE</string>
+    <string name="buscarDni">BUSCAR DNI:</string>
+    <string name="coche">DNI</string>
+    <string name="buscarMatricula">Buscar Matricula</string>
+    <string name="matricula">Matrícula</string>
 </resources>

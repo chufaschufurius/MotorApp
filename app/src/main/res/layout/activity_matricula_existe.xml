@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingLeft="10dp"
-            android:onClick="lanzarBuscarDni" />
+            android:onClick="buscarDni" />
 
         <TextView
             android:layout_width="300dp"
@@ -73,15 +73,8 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_marginBottom="3dp"
-            android:text="1er Apellido"
+            android:text="Apellidos"
             android:id="@+id/textView11" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_marginBottom="3dp"
-            android:text="2o Apellido"
-            android:id="@+id/textView27" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -101,8 +94,16 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_marginBottom="3dp"
-            android:text="Large Text"
+            android:text="@string/matricula"
             android:id="@+id/textView33" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginBottom="3dp"
+            android:text="Coche"
+            android:id="@+id/textView30" />
 
     </LinearLayout>
 
@@ -111,70 +112,68 @@
         android:layout_marginLeft="150dp"
         android:layout_marginTop="120dp"
         android:layout_width="200dp"
-        android:layout_height="300dp">
+        android:layout_height="300dp"
+        android:weightSum="1">
 
-        <TextView
+        <EditText
             android:selectAllOnFocus="true"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:inputType="textPersonName"
-            android:text="intruce el nombre"
             android:ems="10"
-            android:id="@+id/editText2"
+            android:id="@+id/nombreEditText"
             android:layout_gravity="center_horizontal"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
-        <TextView
+        <EditText
             android:selectAllOnFocus="true"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:inputType="textPersonName"
-            android:text="introduce el apellido"
             android:ems="10"
-            android:id="@+id/editText4"
+            android:id="@+id/apellidoEditText"
             android:layout_gravity="center_horizontal"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
-        <TextView
+        <EditText
             android:selectAllOnFocus="true"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:inputType="textPersonName"
-            android:text="introduce el apellido"
             android:ems="10"
-            android:id="@+id/editText5"
+            android:id="@+id/emailEditText"
             android:textSize="10dp" />
 
-        <TextView
+        <EditText
             android:selectAllOnFocus="true"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:inputType="textPersonName"
-            android:text="introduce el e-mail"
             android:ems="10"
-            android:id="@+id/editText6"
+            android:id="@+id/telefonoEditText"
             android:textSize="10dp" />
 
-        <TextView
-            android:selectAllOnFocus="true"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:inputType="textPersonName"
-            android:text="introduce el telefono"
-            android:ems="10"
-            android:id="@+id/editText7"
-            android:textSize="10dp" />
-
-        <TextView
+        <EditText
             android:selectAllOnFocus="true"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:inputType="textPersonName"
             android:layout_marginBottom="3dp"
-            android:text="Name"
             android:ems="10"
-            android:id="@+id/editText8"
-            android:textSize="15dp" />
+            android:id="@+id/matriculaEditText"
+            android:textSize="15dp"
+            android:layout_weight="0.03" />
+
+        <EditText
+            android:selectAllOnFocus="true"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="3dp"
+            android:ems="10"
+            android:id="@+id/cocheEditText"
+            android:textSize="15dp"
+            android:layout_weight="0.03" />
 
     </LinearLayout>
 

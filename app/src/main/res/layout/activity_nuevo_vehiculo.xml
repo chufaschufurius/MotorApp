@@ -21,7 +21,7 @@
             android:layout_weight="0.03"
             android:src="@drawable/arrowback"
             android:background="@color/ultrablue"
-            android:onClick="lanzarDniExiste"
+            android:onClick="lanzarMatriculaExiste"
             android:nestedScrollingEnabled="true" />
 
         <TextView
