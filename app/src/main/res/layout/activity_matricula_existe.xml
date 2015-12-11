@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="DATOS CLIENTE:"
+            android:text="@string/datosCliente"
             android:id="@+id/textView35" />
     </LinearLayout>
 
@@ -66,28 +66,28 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_marginBottom="3dp"
-            android:text="Nombre"
+            android:text="@string/nombreCliente"
             android:id="@+id/textView10" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="25dp"            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_marginBottom="3dp"
-            android:text="Apellidos"
+            android:text="@string/apellidosCliente"
             android:id="@+id/textView11" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="25dp"            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_marginBottom="3dp"
-            android:text="E-mail"
+            android:text="@string/emailCliente"
             android:id="@+id/textView28" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="25dp"            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_marginBottom="3dp"
-            android:text="Telefono"
+            android:text="@string/telefonoCliente"
             android:id="@+id/textView29" />
 
         <TextView
@@ -102,7 +102,7 @@
             android:layout_height="25dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_marginBottom="3dp"
-            android:text="Coche"
+            android:text="@string/cocheCliente"
             android:id="@+id/textView30" />
 
     </LinearLayout>
@@ -188,7 +188,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SIGUIENTE"
+            android:text="@string/siguiente"
             android:id="@+id/button8"
             android:layout_gravity="bottom|right"
             android:layout_alignParentBottom="true"

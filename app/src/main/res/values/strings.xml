@@ -25,8 +25,18 @@
     <string name="title_activity_dni_existe">DniExiste</string>
     <string name="title_activity_dni_no_existe">DniNoExiste</string>
     <string name="siguiente">SIGUIENTE</string>
-    <string name="buscarDni">BUSCAR DNI:</string>
     <string name="coche">DNI</string>
-    <string name="buscarMatricula">Buscar Matricula</string>
+    <string name="buscarMatricula">Buscar Matrícula</string>
     <string name="matricula">Matrícula</string>
+    <string name="datosCliente">DATOS CLIENTE:</string>
+    <string name="nombreCliente">Nombre</string>
+    <string name="apellidosCliente">Apellidos</string>
+    <string name="emailCliente">E-mail</string>
+    <string name="telefonoCliente">Teléfono</string>
+    <string name="cocheCliente">Coche</string>
+    <string name="nuevoCoche">NUEVO VEHÍCULO:</string>
+    <string name="marcaCoche">Marca</string>
+    <string name="modeloCoche">Modelo</string>
+    <string name="numMotor">Num. Motor</string>
+    <string name="trabajoCoche">Trabajo</string>
 </resources>
