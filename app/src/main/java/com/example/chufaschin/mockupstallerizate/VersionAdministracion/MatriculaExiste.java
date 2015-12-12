@@ -1,8 +1,8 @@
 package com.example.chufaschin.mockupstallerizate.VersionAdministracion;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -21,9 +21,8 @@ import java.util.regex.Pattern;
 
 import static com.example.chufaschin.mockupstallerizate.R.id.apellidoEditText;
 import static com.example.chufaschin.mockupstallerizate.R.id.cocheEditText;
-import static com.example.chufaschin.mockupstallerizate.R.id.matricula;
-import static com.example.chufaschin.mockupstallerizate.R.id.matriculaEditText;
 import static com.example.chufaschin.mockupstallerizate.R.id.emailEditText;
+import static com.example.chufaschin.mockupstallerizate.R.id.matriculaEditText;
 import static com.example.chufaschin.mockupstallerizate.R.id.nombreEditText;
 import static com.example.chufaschin.mockupstallerizate.R.id.telefonoEditText;
 
@@ -41,8 +40,8 @@ public class MatriculaExiste extends Activity {
         extraerDatosCliente(matricula.toUpperCase());
     }
 
-    public boolean extraerDatosCliente(String matricula) {
-        String userMatriculaStr;
+    public boolean extraerDatosCliente(final String matricula) {
+        final String userMatriculaStr;
         String userNombreStr;
         String userApellidosStr;
         String userEmailStr;
@@ -82,6 +81,7 @@ public class MatriculaExiste extends Activity {
                         apellidoEdit.setText(apellido);
                         emailEdit.setText(email);
                         telefonoEdit.setText(phone);
+                        extraerDatosCoche(userMatriculaStr);
                     }
                 } else {
                     Log.d("clients", "Error: " + e.getMessage());
@@ -117,16 +117,16 @@ public class MatriculaExiste extends Activity {
                         }
                     }
                 });*/
-                return true;
-            }
+            return true;
         }
+    }
 
 
-    public void extraerDatosCoche(String matricula){
-        String userMatriculaStr = matricula;
-        
+    public void extraerDatosCoche(String matricula) {
+        cocheEdit = (EditText) findViewById(cocheEditText);
+
         ParseQuery<ParseObject> query = ParseQuery.getQuery("cars");
-        query.whereEqualTo("plate", userMatriculaStr.toUpperCase());
+        query.whereEqualTo("plate", matricula.toUpperCase());
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List objects, ParseException e) {
@@ -134,21 +134,15 @@ public class MatriculaExiste extends Activity {
                     int len = objects.size();
                     for (int i = 0; i < len; i++) {
                         ParseObject p = (ParseObject) objects.get(i);
-                        String nombre = p.getString("name");
-                        String apellido = p.getString("surname");
-                        String email = p.getString("email");
-                        String phone = p.getString("phone");
-                        nombreEdit.setText(nombre);
-                        apellidoEdit.setText(apellido);
-                        emailEdit.setText(email);
-                        telefonoEdit.setText(phone);
+                        String marca = p.getString("brand").toString();
+                        String modelo = p.getString("model").toString();
+                        cocheEdit.setText(marca + " " + modelo);
                     }
                 } else {
                     Log.d("clients", "Error: " + e.getMessage());
                 }
             }
         });
-
     }
 
     public static boolean isEmailValid(String email) {

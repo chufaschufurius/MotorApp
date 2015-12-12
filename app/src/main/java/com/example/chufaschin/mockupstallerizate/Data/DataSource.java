@@ -71,7 +71,7 @@ public class DataSource {
         cars.saveInBackground();
     }
 
-    public void insertClients(){
+    public void insertClients() {
         ParseObject clients = new ParseObject("clients");
         clients.put(ClientsEntry.FK_PLATE, ClientsEntry.getFkPlate());
         clients.put(ClientsEntry.EMAIL, ClientsEntry.getEMAIL());
@@ -80,7 +80,4 @@ public class DataSource {
         clients.put(ClientsEntry.PHONE, ClientsEntry.getPHONE());
         clients.saveInBackground();
     }
-
-
-
 }
