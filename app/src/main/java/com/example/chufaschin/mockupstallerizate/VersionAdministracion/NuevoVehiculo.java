@@ -15,7 +15,7 @@ public class NuevoVehiculo extends Activity {
         setContentView(R.layout.activity_nuevo_vehiculo);
     }
     public void lanzarDniExiste(View view){
-        Intent intent= new Intent(this, DniExiste.class);
+        Intent intent= new Intent(this, MatriculaExiste.class);
         startActivity(intent);
     }
 

@@ -50,16 +50,6 @@
             android:textSize="20dp"
             android:inputType="" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:inputType="textMultiLine"
-            android:textSize="40px"
-            android:ems="10"
-            android:id="@+id/editText"
-            android:text="TRABAJADOR: Jose Perez   DIA: 12/12/15"
-            android:textColor="@color/grey"
-            android:background="#eee2e2" />
     </LinearLayout>
 
     <TableRow>
