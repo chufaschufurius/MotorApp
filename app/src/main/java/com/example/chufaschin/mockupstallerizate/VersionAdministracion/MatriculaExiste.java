@@ -183,11 +183,4 @@ public class MatriculaExiste extends Activity implements View.OnClickListener {
         startActivity(intent);
 
     }
-
-    public void lanzarDniNoExiste(View view) {
-        Intent intent = new Intent(this, DniNoExiste.class);
-        startActivity(intent);
-    }
-
-
 }
