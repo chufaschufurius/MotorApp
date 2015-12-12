@@ -16,7 +16,7 @@ public class MenuAdministracion extends AppCompatActivity {
         setContentView(R.layout.activity_menu_administracion);
     }
     public void lanzarNuevo(View view){
-        Intent intent= new Intent(this, BuscarMatricula.class);
+        Intent intent= new Intent(this, IntroMatricula.class);
         startActivity(intent);
     }
 

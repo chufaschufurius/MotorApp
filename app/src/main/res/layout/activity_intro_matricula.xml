@@ -23,7 +23,7 @@
                     android:id="@+id/imageButton2"
                     android:layout_weight="0.08"
                     android:src="@drawable/arrowback"
-                    android:background="@color/ultrablue"
+                    android:background="#ffffff"
                     android:layout_width="50px"
                     android:layout_height="match_parent"
                     android:onClick="lanzarMenu" />
@@ -39,7 +39,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
-                    android:background="@color/ultrablue"
+                    android:background="#ffffff"
                     android:autoText="false" />
             </LinearLayout>
 
@@ -51,7 +51,8 @@
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -59,9 +60,9 @@
                         android:text="@string/buscarMatricula"
                         android:id="@+id/textView9"
                         android:layout_gravity="left|center_horizontal"
-                        android:textColor="#ffffff"
+                        android:textColor="#FF696969"
                         android:textSize="20dp"
-                         />
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 </LinearLayout>
 
@@ -69,7 +70,8 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_gravity="center_horizontal">
+                    android:layout_gravity="center_horizontal"
+                    android:background="#ffffff">
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -90,8 +92,8 @@
             <RelativeLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="477dp"
-                android:background="@color/ultrablue">
+                android:layout_height="476dp"
+                android:background="#ffffff">
 
                 <Button
                     style="?android:attr/buttonStyleSmall"

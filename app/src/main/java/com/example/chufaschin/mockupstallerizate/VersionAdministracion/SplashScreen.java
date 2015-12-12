@@ -28,14 +28,13 @@ public class SplashScreen extends AppCompatActivity {
         Parse.enableLocalDatastore(this);
 
         Parse.initialize(this, "rhJjlsANpxGikehq4WLxFR6KI6cQThGnnZy4x1Xo", "0eI1uNLoUIrX6FHVaN0IrSaQcgIjztVzCVYtXBiJ");
-
 //        DataSource dataSource = new DataSource(this);
 //        dataSource.insertCars();
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                final Intent mainIntent = new Intent(SplashScreen.this, SeleccionarMarca.class);
+                final Intent mainIntent = new Intent(SplashScreen.this, IntroMatricula.class);
                 SplashScreen.this.startActivity(mainIntent);
                 SplashScreen.this.finish();
             }

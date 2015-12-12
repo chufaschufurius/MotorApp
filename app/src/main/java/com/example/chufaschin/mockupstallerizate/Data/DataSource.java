@@ -73,7 +73,6 @@ public class DataSource {
 
     public void insertClients(){
         ParseObject clients = new ParseObject("clients");
-        clients.put(ClientsEntry.DNI, ClientsEntry.getDNI());
         clients.put(ClientsEntry.FK_PLATE, ClientsEntry.getFkPlate());
         clients.put(ClientsEntry.EMAIL, ClientsEntry.getEMAIL());
         clients.put(ClientsEntry.NAME, ClientsEntry.getNAME());
@@ -81,6 +80,7 @@ public class DataSource {
         clients.put(ClientsEntry.PHONE, ClientsEntry.getPHONE());
         clients.saveInBackground();
     }
+
 
 
 }

@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.example.chufaschin.mockupstallerizate.R;
 
-public class BuscarMatricula extends Activity implements View.OnClickListener {
+public class IntroMatricula extends Activity implements View.OnClickListener {
 
     private EditText matriculaEdit;
     private Button siguiente, find;
@@ -18,7 +18,7 @@ public class BuscarMatricula extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_buscar_matricula);
+        setContentView(R.layout.activity_intro_matricula);
 
         siguiente = (Button) findViewById(R.id.Siguientebtn);
         siguiente.setOnClickListener(this);

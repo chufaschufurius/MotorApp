@@ -3,21 +3,25 @@ package com.example.chufaschin.mockupstallerizate.VersionAdministracion;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.chufaschin.mockupstallerizate.Data.DataSource;
 import com.example.chufaschin.mockupstallerizate.R;
-import com.parse.ParseUser;
-import com.parse.SignUpCallback;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.example.chufaschin.mockupstallerizate.R.id.apellidoEditText;
 import static com.example.chufaschin.mockupstallerizate.R.id.cocheEditText;
+import static com.example.chufaschin.mockupstallerizate.R.id.matricula;
 import static com.example.chufaschin.mockupstallerizate.R.id.matriculaEditText;
 import static com.example.chufaschin.mockupstallerizate.R.id.emailEditText;
 import static com.example.chufaschin.mockupstallerizate.R.id.nombreEditText;
@@ -33,11 +37,11 @@ public class MatriculaExiste extends Activity {
         setContentView(R.layout.activity_matricula_existe);
 
         Intent intent = getIntent();
-        String matricula = intent.getStringExtra("matricula");
-        extraerDatos(matricula);
+        String matricula = intent.getStringExtra("matricula").toUpperCase();
+        extraerDatosCliente(matricula.toUpperCase());
     }
 
-    public boolean extraerDatos(String matricula) {
+    public boolean extraerDatosCliente(String matricula) {
         String userMatriculaStr;
         String userNombreStr;
         String userApellidosStr;
@@ -61,6 +65,30 @@ public class MatriculaExiste extends Activity {
         userMatriculaStr = matricula;
         matriculaEdit.setText(userMatriculaStr);
 
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("clients");
+        query.whereEqualTo("plate", userMatriculaStr.toUpperCase());
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List objects, ParseException e) {
+                if (e == null) {
+                    int len = objects.size();
+                    for (int i = 0; i < len; i++) {
+                        ParseObject p = (ParseObject) objects.get(i);
+                        String nombre = p.getString("name");
+                        String apellido = p.getString("surname");
+                        String email = p.getString("email");
+                        String phone = p.getString("phone");
+                        nombreEdit.setText(nombre);
+                        apellidoEdit.setText(apellido);
+                        emailEdit.setText(email);
+                        telefonoEdit.setText(phone);
+                    }
+                } else {
+                    Log.d("clients", "Error: " + e.getMessage());
+                }
+            }
+        });
+
         if (userApellidosStr.equals("") && userCocheStr.equals("") && userNombreStr.equals("")
                 && userEmailStr.equals("") && userTelefonoStr.equals("") && userMatriculaStr.equals("")) {
             //VENTANA EMERGENTE RELLENAR CAMPOS VACIOS
@@ -68,35 +96,59 @@ public class MatriculaExiste extends Activity {
                     "Por favor completa los campos vacios para el registro",
                     Toast.LENGTH_LONG).show();
             return false;
-        }else{
-            if (isEmailValid(userEmailStr)) {
+        } else {
+            /*if (isEmailValid(userEmailStr)) {
                 // Save new user data into Parse.com Data Storage
-                DataSource dataSource = new DataSource(this);
-                dataSource.insertClients();
-                ParseUser user = new ParseUser();
-                user.setUsername(userNombreStr);
-                user.setPassword(userApellidosStr);
-                user.setEmail(userEmailStr);
-                user.setObjectId(userTelefonoStr);
-                user.signUpInBackground(new SignUpCallback() {
+                ParseQuery<ParseObject> query = ParseQuery.getQuery("clients");
+                query.whereEqualTo("plate", userMatriculaStr);
+                query.findInBackground(new FindCallback<ParseObject>() {
                     @Override
-                    public void done(com.parse.ParseException e) {
+                    public void done(List objects, ParseException e) {
                         if (e == null) {
-                            // Show a simple Toast message upon successful registration
-                            Toast.makeText(getApplicationContext(),
-                                    "Nuevo cliente introducido",
-                                    Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(getApplicationContext(),
-                                    "Error en el registro, el nombre de usuario o el email ya están registrados.", Toast.LENGTH_LONG)
-                                    .show();
+                            int len = objects.size();
+                            for (int i = 0; i < len; i++) {
+                                ParseObject p = (ParseObject) objects.get(i);
+                                String nombre = p.getString("name");
+                                nombreEdit.setText(nombre);
+
+                            }
+                        } *//*else {
+                            Log.d("clients", "Error: " + e.getMessage());
                         }
                     }
-                });
+                });*/
                 return true;
             }
-            return true;
         }
+
+
+    public void extraerDatosCoche(String matricula){
+        String userMatriculaStr = matricula;
+        
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("cars");
+        query.whereEqualTo("plate", userMatriculaStr.toUpperCase());
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List objects, ParseException e) {
+                if (e == null) {
+                    int len = objects.size();
+                    for (int i = 0; i < len; i++) {
+                        ParseObject p = (ParseObject) objects.get(i);
+                        String nombre = p.getString("name");
+                        String apellido = p.getString("surname");
+                        String email = p.getString("email");
+                        String phone = p.getString("phone");
+                        nombreEdit.setText(nombre);
+                        apellidoEdit.setText(apellido);
+                        emailEdit.setText(email);
+                        telefonoEdit.setText(phone);
+                    }
+                } else {
+                    Log.d("clients", "Error: " + e.getMessage());
+                }
+            }
+        });
+
     }
 
     public static boolean isEmailValid(String email) {
@@ -114,7 +166,7 @@ public class MatriculaExiste extends Activity {
     }
 
     public void buscarDni(View view) {
-        Intent intent = new Intent(this, BuscarMatricula.class);
+        Intent intent = new Intent(this, IntroMatricula.class);
         startActivity(intent);
     }
 

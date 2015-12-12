@@ -10,7 +10,6 @@ public class ClientsEntry implements Serializable {
     //    private int id;
     //        public static final String COLUMN_ID = BaseColumns._ID;
     public static String TABLE_NAME = "clients";
-    public static String DNI = "user";
     public static String FK_PLATE = "plate"; //cogemos la matricula de coches
     public static String EMAIL = "email";
     public static String NAME = "name";
@@ -21,7 +20,6 @@ public class ClientsEntry implements Serializable {
     public String toString() {
         return "ClientsEntry{" +
                 "clients='" + TABLE_NAME + '\'' +
-                ", DNI='" + DNI + '\'' +
                 ", FK_PLATE='" + FK_PLATE + '\'' +
                 ", NAME='" + NAME + '\'' +
                 ", PHONE='" + PHONE + '\'' +
@@ -29,13 +27,6 @@ public class ClientsEntry implements Serializable {
                 '}';
     }
 
-    public static String getDNI() {
-        return DNI;
-    }
-
-    public static void setDNI(String DNI) {
-        ClientsEntry.DNI = DNI;
-    }
 
     public static String getFkPlate() {
         return FK_PLATE;
