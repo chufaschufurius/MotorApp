@@ -52,6 +52,7 @@ public class MatriculaExiste extends Activity {
 
         extraerDatosCliente(matricula.toUpperCase());
 
+        //Esconde el editText de "coche" si no existe en la bbdd
         String coche = cocheEdit.getText().toString();
         if(coche.equals("")){
             cocheEdit.setVisibility(View.INVISIBLE);
