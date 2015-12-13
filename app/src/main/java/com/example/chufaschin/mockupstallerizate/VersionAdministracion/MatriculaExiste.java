@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.chufaschin.mockupstallerizate.R;
@@ -29,7 +30,8 @@ import static com.example.chufaschin.mockupstallerizate.R.id.telefonoEditText;
 
 public class MatriculaExiste extends Activity {
     private EditText matriculaEdit, nombreEdit, apellidoEdit, emailEdit, telefonoEdit, cocheEdit;
-    private String matricula, userNombreStr, userApellidosStr, userEmailStr, userTelefonoStr, userCocheStr;
+    private String matricula;
+    private TextView cocheTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +49,21 @@ public class MatriculaExiste extends Activity {
         matriculaEdit = (EditText) findViewById(matriculaEditText);
 
         matriculaEdit.setText(matricula);
+
         extraerDatosCliente(matricula.toUpperCase());
+
+        String coche = cocheEdit.getText().toString();
+        if(coche.equals("")){
+            cocheEdit.setVisibility(View.INVISIBLE);
+        }
     }
 
     public void onClick(View v) {
-        userApellidosStr = apellidoEdit.getText().toString().toUpperCase();
-        userCocheStr = cocheEdit.getText().toString().toUpperCase();
-        userNombreStr = nombreEdit.getText().toString().toUpperCase();
-        userEmailStr = emailEdit.getText().toString().toUpperCase();
-        userTelefonoStr = telefonoEdit.getText().toString().toUpperCase();
+        String userApellidosStr = apellidoEdit.getText().toString().toUpperCase();
+        String userCocheStr = cocheEdit.getText().toString().toUpperCase();
+        String userNombreStr = nombreEdit.getText().toString().toUpperCase();
+        String userEmailStr = emailEdit.getText().toString().toUpperCase();
+        String userTelefonoStr = telefonoEdit.getText().toString().toUpperCase();
 
         if (userCocheStr.equals("")) {
             if (userApellidosStr.equals("") || userNombreStr.equals("") || userEmailStr.equals("") && userTelefonoStr.equals("") && matriculaEdit.equals("")) {
@@ -89,13 +97,8 @@ public class MatriculaExiste extends Activity {
                         apellidoEdit.setText(apellido);
                         emailEdit.setText(email);
                         telefonoEdit.setText(phone);
+
                         extraerDatosCoche(matricula);
-                        /*if (apellidoEdit.equals("") && nombreEdit.equals("") && emailEdit.equals("") && telefonoEdit.equals("") && matricula.equals("")) {
-                            //VENTANA EMERGENTE RELLENAR CAMPOS VACIOS
-                            Toast.makeText(getApplicationContext(),
-                                    "Por favor completa los campos vacios para el registro",
-                                    Toast.LENGTH_LONG).show();
-                        }*/
                     }
                 } else {
                     Log.d("clients", "Error: " + e.getMessage());
@@ -106,8 +109,7 @@ public class MatriculaExiste extends Activity {
 
 
     public void extraerDatosCoche(String matricula) {
-        cocheEdit = (EditText) findViewById(cocheEditText);
-
+        //Conecta a Parse y busca el coche por su matrícula. Si existe rellena el campo "coche" con la marca y el modelo.
         ParseQuery<ParseObject> query = ParseQuery.getQuery("cars");
         query.whereEqualTo("plate", matricula.toUpperCase());
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -117,8 +119,8 @@ public class MatriculaExiste extends Activity {
                     int len = objects.size();
                     for (int i = 0; i < len; i++) {
                         ParseObject p = (ParseObject) objects.get(i);
-                        String marca = p.getString("brand").toString();
-                        String modelo = p.getString("model").toString();
+                        String marca = p.getString("brand");
+                        String modelo = p.getString("model");
                         cocheEdit.setText(marca + " " + modelo);
                     }
                 } else {
