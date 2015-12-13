@@ -18,20 +18,20 @@ public class SeleccionarMarca extends Activity {
         setContentView(R.layout.activity_administracion_seleccionar_marca);
 
         Intent intent = getIntent();
-        matricula = intent.getStringExtra("matricula").toUpperCase();
-        nombreC = intent.getStringExtra("nombreC").toUpperCase();
-        apellidoC = intent.getStringExtra("apellidoC").toUpperCase();
-        emailC = intent.getStringExtra("emailC").toUpperCase();
-        phone = intent.getStringExtra("phone").toUpperCase();
+        matricula = intent.getStringExtra("matricula");
+        nombreC = intent.getStringExtra("nombreC");
+        apellidoC = intent.getStringExtra("apellidoC");
+        emailC = intent.getStringExtra("emailC");
+        phone = intent.getStringExtra("phone");
 
     }
 
     public void onClick(View view) {
         Button button = (Button) view;
         //Usamos el texto del botón para asignar el nombre de la marca del coche
-        marca = button.getText().toString().toUpperCase();
+        marca = button.getText().toString();
         Toast.makeText(getApplicationContext(),
-                marca,
+                marca + matricula,
                 Toast.LENGTH_LONG).show();
 
         Intent intent = new Intent(this, NuevoVehiculo.class);

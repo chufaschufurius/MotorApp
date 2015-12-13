@@ -18,12 +18,12 @@ public class NuevoVehiculo extends Activity {
         setContentView(R.layout.activity_nuevo_vehiculo);
 
         Intent intent = getIntent();
-        matricula = intent.getStringExtra("matricula").toUpperCase();
-        nombreC = intent.getStringExtra("nombreC").toUpperCase();
-        apellidoC = intent.getStringExtra("apellidoC").toUpperCase();
-        emailC = intent.getStringExtra("emailC").toUpperCase();
-        phone = intent.getStringExtra("phone").toUpperCase();
-        marca = intent.getStringExtra("marca").toUpperCase();
+        matricula = intent.getStringExtra("matricula");
+        nombreC = intent.getStringExtra("nombreC");
+        apellidoC = intent.getStringExtra("apellidoC");
+        emailC = intent.getStringExtra("emailC");
+        phone = intent.getStringExtra("phone");
+        marca = intent.getStringExtra("marca");
 
         matriculaEdit = (EditText) findViewById(R.id.matriculaEditText);
         marcaEdit = (EditText) findViewById(R.id.marcaEdittText);
@@ -31,6 +31,8 @@ public class NuevoVehiculo extends Activity {
         numMotorEdit = (EditText) findViewById(R.id.numMotorEditText);
         trabajoEdit = (EditText) findViewById(R.id.trabajoEditText);
 
+        matriculaEdit.setText(matricula);
+        marcaEdit.setText(marca);
     }
 
     public void recogerDatos(){

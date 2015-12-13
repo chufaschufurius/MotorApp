@@ -27,18 +27,14 @@ import static com.example.chufaschin.mockupstallerizate.R.id.matriculaEditText;
 import static com.example.chufaschin.mockupstallerizate.R.id.nombreEditText;
 import static com.example.chufaschin.mockupstallerizate.R.id.telefonoEditText;
 
-public class MatriculaExiste extends Activity implements View.OnClickListener {
+public class MatriculaExiste extends Activity {
     private EditText matriculaEdit, nombreEdit, apellidoEdit, emailEdit, telefonoEdit, cocheEdit;
-    private Button siguiente;
     private String matricula, userNombreStr, userApellidosStr, userEmailStr, userTelefonoStr, userCocheStr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matricula_existe);
-
-        siguiente = (Button) findViewById(R.id.Siguientebtn);
-        siguiente.setOnClickListener(this);
 
         Intent intent = getIntent();
         matricula = intent.getStringExtra("matricula").toUpperCase();
@@ -50,28 +46,32 @@ public class MatriculaExiste extends Activity implements View.OnClickListener {
         cocheEdit = (EditText) findViewById(cocheEditText);
         matriculaEdit = (EditText) findViewById(matriculaEditText);
 
+        matriculaEdit.setText(matricula);
+        extraerDatosCliente(matricula.toUpperCase());
+    }
+
+    public void onClick(View v) {
         userApellidosStr = apellidoEdit.getText().toString().toUpperCase();
         userCocheStr = cocheEdit.getText().toString().toUpperCase();
         userNombreStr = nombreEdit.getText().toString().toUpperCase();
         userEmailStr = emailEdit.getText().toString().toUpperCase();
         userTelefonoStr = telefonoEdit.getText().toString().toUpperCase();
 
-        matriculaEdit.setText(matricula);
-        extraerDatosCliente(matricula.toUpperCase());
-    }
-
-    @Override
-    public void onClick(View v) {
-
-        cocheEdit = (EditText) findViewById(cocheEditText);
-        userCocheStr = cocheEdit.getText().toString().toUpperCase();
-
         if (userCocheStr.equals("")) {
-            lanzarNuevoVehiculo(userNombreStr, userApellidosStr, userEmailStr, userTelefonoStr, matricula);
+            if (userApellidosStr.equals("") || userNombreStr.equals("") || userEmailStr.equals("") && userTelefonoStr.equals("") && matriculaEdit.equals("")) {
+                //VENTANA EMERGENTE RELLENAR CAMPOS VACIOS
+                Toast.makeText(getApplicationContext(),
+                        "Por favor completa los campos vacios",
+                        Toast.LENGTH_LONG).show();
+            } else {
+                lanzarNuevoVehiculo(userNombreStr, userApellidosStr, userEmailStr, userTelefonoStr, matricula);
+            }
+        } else {
+            //lanzar tarear a realizar
         }
     }
 
-    public boolean extraerDatosCliente(final String matricula) {
+    public void extraerDatosCliente(final String matricula) {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("clients");
         query.whereEqualTo("plate", matricula.toUpperCase());
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -90,49 +90,18 @@ public class MatriculaExiste extends Activity implements View.OnClickListener {
                         emailEdit.setText(email);
                         telefonoEdit.setText(phone);
                         extraerDatosCoche(matricula);
-                        if (apellidoEdit.equals("") && nombreEdit.equals("") && emailEdit.equals("") && telefonoEdit.equals("") && matricula.equals("")) {
+                        /*if (apellidoEdit.equals("") && nombreEdit.equals("") && emailEdit.equals("") && telefonoEdit.equals("") && matricula.equals("")) {
                             //VENTANA EMERGENTE RELLENAR CAMPOS VACIOS
                             Toast.makeText(getApplicationContext(),
                                     "Por favor completa los campos vacios para el registro",
                                     Toast.LENGTH_LONG).show();
-                        }
+                        }*/
                     }
                 } else {
                     Log.d("clients", "Error: " + e.getMessage());
                 }
             }
         });
-
-        if (userApellidosStr.equals("") && userCocheStr.equals("") && userNombreStr.equals("")
-                && userEmailStr.equals("") && userTelefonoStr.equals("") && matricula.equals("")) {
-            //VENTANA EMERGENTE RELLENAR CAMPOS VACIOS
-            Toast.makeText(getApplicationContext(),
-                    "Por favor completa los campos vacios para el registro",
-                    Toast.LENGTH_LONG).show();
-            return false;
-        } else {
-            /*if (isEmailValid(userEmailStr)) {
-                // Save new user data into Parse.com Data Storage
-                ParseQuery<ParseObject> query = ParseQuery.getQuery("clients");
-                query.whereEqualTo("plate", userMatriculaStr);
-                query.findInBackground(new FindCallback<ParseObject>() {
-                    @Override
-                    public void done(List objects, ParseException e) {
-                        if (e == null) {
-                            int len = objects.size();
-                            for (int i = 0; i < len; i++) {
-                                ParseObject p = (ParseObject) objects.get(i);
-                                String nombre = p.getString("name");
-                                nombreEdit.setText(nombre);
-
-                            }
-                        } *//*else {
-                            Log.d("clients", "Error: " + e.getMessage());
-                        }
-                    }
-                });*/
-            return true;
-        }
     }
 
 

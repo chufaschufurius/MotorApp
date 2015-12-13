@@ -200,7 +200,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_gravity="bottom|right"
-            android:onClick="lanzarNuevoVehiculo"
-            android:text="@string/siguiente" />
+            android:text="@string/siguiente"
+            android:onClick="onClick" />
     </RelativeLayout>
 </RelativeLayout>
