@@ -67,7 +67,7 @@ public class MatriculaExiste extends Activity implements View.OnClickListener {
         userCocheStr = cocheEdit.getText().toString().toUpperCase();
 
         if (userCocheStr.equals("")) {
-            lanzarNuevoVehiculo(userNombreStr, userApellidosStr, userEmailStr, userTelefonoStr);
+            lanzarNuevoVehiculo(userNombreStr, userApellidosStr, userEmailStr, userTelefonoStr, matricula);
         }
     }
 
@@ -173,13 +173,14 @@ public class MatriculaExiste extends Activity implements View.OnClickListener {
         return isValid;
     }
 
-    public void lanzarNuevoVehiculo(String nombre, String apellido, String email, String phone) {
+    public void lanzarNuevoVehiculo(String nombre, String apellido, String email, String phone, String matricula) {
 
         Intent intent = new Intent(MatriculaExiste.this, SeleccionarMarca.class);
         intent.putExtra("nombreC", nombre);
         intent.putExtra("apellidoC", apellido);
         intent.putExtra("emailC", email);
         intent.putExtra("phone", phone);
+        intent.putExtra("matricula", matricula);
         startActivity(intent);
 
     }
