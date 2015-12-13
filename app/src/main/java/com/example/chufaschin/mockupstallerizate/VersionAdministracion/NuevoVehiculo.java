@@ -5,11 +5,16 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.chufaschin.mockupstallerizate.Data.CarsEntry;
+import com.example.chufaschin.mockupstallerizate.Data.ClientsEntry;
+import com.example.chufaschin.mockupstallerizate.Data.DataSource;
 import com.example.chufaschin.mockupstallerizate.R;
+import com.parse.Parse;
 
-public class NuevoVehiculo extends Activity {
-    private String marca, matricula, nombreC, apellidoC, emailC, phone,cocheMatriculaStr, cocheMarcaStr, cocheModeloStr, cocheNumMotorStr, cocheTrabajoStr ;
+public class NuevoVehiculo extends Activity implements View.OnClickListener{
+    private String marca, matricula, nombreC, apellidoC, emailC, phone, owner;
     private EditText matriculaEdit, marcaEdit, modeloEdit, numMotorEdit, trabajoEdit;
 
     @Override
@@ -35,11 +40,39 @@ public class NuevoVehiculo extends Activity {
         marcaEdit.setText(marca);
     }
 
-    public void recogerDatos(){
-        cocheMatriculaStr = matriculaEdit.getText().toString().toUpperCase();
-        cocheMarcaStr = marcaEdit.getText().toString().toUpperCase();
-        cocheModeloStr = modeloEdit.getText().toString().toUpperCase();
-        cocheNumMotorStr = numMotorEdit.getText().toString().toUpperCase();
-        cocheTrabajoStr = trabajoEdit.getText().toString().toUpperCase();
+    @Override
+    public void onClick(View v) {
+        String cocheMatriculaStr = String.valueOf(matriculaEdit.getText()) ;
+        String cocheMarcaStr = String.valueOf(marcaEdit.getText());
+        String cocheModeloStr = String.valueOf(modeloEdit.getText());
+        String cocheNumMotorStr = String.valueOf(numMotorEdit.getText());
+        String cocheTrabajoStr = String.valueOf(trabajoEdit.getText());
+
+        if (cocheMatriculaStr.equals("") || cocheMarcaStr.equals("") || cocheModeloStr.equals("") || cocheNumMotorStr.equals("") || cocheTrabajoStr.equals("")) {
+            //VENTANA EMERGENTE RELLENAR CAMPOS VACIOS
+            Toast.makeText(getApplicationContext(),
+                    "Por favor completa los campos vacios",
+                    Toast.LENGTH_LONG).show();
+        } else {
+            CarsEntry.setBRAND(cocheMarcaStr);
+            CarsEntry.setMODEL(cocheModeloStr);
+            CarsEntry.setMotorNumber(cocheNumMotorStr);
+            CarsEntry.setPLATE(cocheMatriculaStr);
+            CarsEntry.setTASK(cocheTrabajoStr);
+            CarsEntry.setOWNER(owner);
+            ClientsEntry.setFkPlate(matricula);
+            ClientsEntry.setEMAIL(emailC);
+            ClientsEntry.setNAME(nombreC);
+            ClientsEntry.setSURNAME(apellidoC);
+            ClientsEntry.setPHONE(phone);
+
+            DataSource dataSource = new DataSource(this);
+            dataSource.insertClients();
+            dataSource.insertCars();
+        }
+    }
+
+    public void recogerDatos() {
+
     }
 }

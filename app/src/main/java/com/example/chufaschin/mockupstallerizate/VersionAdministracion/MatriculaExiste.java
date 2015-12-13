@@ -28,7 +28,7 @@ import static com.example.chufaschin.mockupstallerizate.R.id.matriculaEditText;
 import static com.example.chufaschin.mockupstallerizate.R.id.nombreEditText;
 import static com.example.chufaschin.mockupstallerizate.R.id.telefonoEditText;
 
-public class MatriculaExiste extends Activity {
+public class MatriculaExiste extends Activity implements View.OnClickListener{
     private EditText matriculaEdit, nombreEdit, apellidoEdit, emailEdit, telefonoEdit, cocheEdit;
     private String matricula;
     private TextView cocheTextView;
@@ -58,22 +58,23 @@ public class MatriculaExiste extends Activity {
             cocheEdit.setVisibility(View.INVISIBLE);
         }
     }
-
+    @Override
     public void onClick(View v) {
         String userApellidosStr = apellidoEdit.getText().toString().toUpperCase();
         String userCocheStr = cocheEdit.getText().toString().toUpperCase();
         String userNombreStr = nombreEdit.getText().toString().toUpperCase();
         String userEmailStr = emailEdit.getText().toString().toUpperCase();
         String userTelefonoStr = telefonoEdit.getText().toString().toUpperCase();
+        String userMatriculaStr = matriculaEdit.getText().toString().toUpperCase();
 
         if (userCocheStr.equals("")) {
-            if (userApellidosStr.equals("") || userNombreStr.equals("") || userEmailStr.equals("") && userTelefonoStr.equals("") && matriculaEdit.equals("")) {
+            if (userApellidosStr.equals("") || userNombreStr.equals("") || userEmailStr.equals("") || userTelefonoStr.equals("") || userMatriculaStr.equals("")) {
                 //VENTANA EMERGENTE RELLENAR CAMPOS VACIOS
                 Toast.makeText(getApplicationContext(),
                         "Por favor completa los campos vacios",
                         Toast.LENGTH_LONG).show();
             } else {
-                lanzarNuevoVehiculo(userNombreStr, userApellidosStr, userEmailStr, userTelefonoStr, matricula);
+                lanzarNuevoVehiculo(userNombreStr, userApellidosStr, userEmailStr, userTelefonoStr, userMatriculaStr);
             }
         } else {
             //lanzar tarear a realizar

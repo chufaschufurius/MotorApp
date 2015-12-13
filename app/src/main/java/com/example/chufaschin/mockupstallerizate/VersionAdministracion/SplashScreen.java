@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import com.example.chufaschin.mockupstallerizate.Data.DataSource;
 import com.example.chufaschin.mockupstallerizate.R;
 import com.koushikdutta.ion.Ion;
 import com.parse.Parse;
@@ -28,8 +29,8 @@ public class SplashScreen extends AppCompatActivity {
         Parse.enableLocalDatastore(this);
 
         Parse.initialize(this, "rhJjlsANpxGikehq4WLxFR6KI6cQThGnnZy4x1Xo", "0eI1uNLoUIrX6FHVaN0IrSaQcgIjztVzCVYtXBiJ");
-//        DataSource dataSource = new DataSource(this);
-//        dataSource.insertCars();
+/*        DataSource dataSource = new DataSource(this);
+        dataSource.insertCars();*/
 
         new Handler().postDelayed(new Runnable() {
             @Override

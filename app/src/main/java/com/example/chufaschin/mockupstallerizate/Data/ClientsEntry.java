@@ -13,7 +13,7 @@ public class ClientsEntry implements Serializable {
     public static String FK_PLATE = "plate"; //cogemos la matricula de coches
     public static String EMAIL = "email";
     public static String NAME = "name";
-    public static String PHONE = "";
+    public static String PHONE = "phone";
     public static String SURNAME = "surname";
 
     @Override
