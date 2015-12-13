@@ -4,23 +4,40 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
+import android.widget.EditText;
 
 import com.example.chufaschin.mockupstallerizate.R;
 
 public class NuevoVehiculo extends Activity {
+    private String marca, matricula, nombreC, apellidoC, emailC, phone,cocheMatriculaStr, cocheMarcaStr, cocheModeloStr, cocheNumMotorStr, cocheTrabajoStr ;
+    private EditText matriculaEdit, marcaEdit, modeloEdit, numMotorEdit, trabajoEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nuevo_vehiculo);
-    }
-    public void lanzarDniExiste(View view){
-        Intent intent= new Intent(this, MatriculaExiste.class);
-        startActivity(intent);
+
+        Intent intent = getIntent();
+        matricula = intent.getStringExtra("matricula").toUpperCase();
+        nombreC = intent.getStringExtra("nombreC").toUpperCase();
+        apellidoC = intent.getStringExtra("apellidoC").toUpperCase();
+        emailC = intent.getStringExtra("emailC").toUpperCase();
+        phone = intent.getStringExtra("phone").toUpperCase();
+        marca = intent.getStringExtra("marca").toUpperCase();
+
+        matriculaEdit = (EditText) findViewById(R.id.matriculaEditText);
+        marcaEdit = (EditText) findViewById(R.id.marcaEdittText);
+        modeloEdit = (EditText) findViewById(R.id.modeloEditText);
+        numMotorEdit = (EditText) findViewById(R.id.numMotorEditText);
+        trabajoEdit = (EditText) findViewById(R.id.trabajoEditText);
+
     }
 
-    public void lanzarSeleccionarMarca(View view){
-        Intent intent= new Intent(this, SeleccionarMarca.class);
-        startActivity(intent);
+    public void recogerDatos(){
+        cocheMatriculaStr = matriculaEdit.getText().toString().toUpperCase();
+        cocheMarcaStr = marcaEdit.getText().toString().toUpperCase();
+        cocheModeloStr = modeloEdit.getText().toString().toUpperCase();
+        cocheNumMotorStr = numMotorEdit.getText().toString().toUpperCase();
+        cocheTrabajoStr = trabajoEdit.getText().toString().toUpperCase();
     }
 }
